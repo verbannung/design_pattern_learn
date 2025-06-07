@@ -5,7 +5,6 @@ import java.util.Objects;
 public class EagerSingleton {
 
     public volatile static EagerSingleton INSTANCE=getInstance();
-    public Integer i=1;
 
     private static EagerSingleton getInstance(){
         if(INSTANCE==null){
@@ -23,4 +22,8 @@ public class EagerSingleton {
         System.out.println(singleton1 == singleton2);
 
     }
+
+    /**
+     * 懒汉模式只有在使用的时候才会初始化，注意多线程安全
+     */
 }

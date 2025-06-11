@@ -1,4 +1,11 @@
-package org.elliot.domain;
+package org.elliot;
 
-public class CreateProductA {
+import org.elliot.domain.ProductA;
+
+public class CreateProductA extends Creator{
+
+    @Override
+    public Object createProduct() {
+        return ProductA.builder().build();
+    }
 }

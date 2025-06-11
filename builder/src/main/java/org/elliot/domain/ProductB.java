@@ -1,6 +1,5 @@
 package org.elliot.domain;
 
-import lombok.Builder;
 import lombok.Data;
 import org.elliot.Build;
 
@@ -9,7 +8,7 @@ import java.time.LocalDate;
 
 @Data
 
-public class ProductA {
+public class ProductB {
 
     private String name;
 
@@ -17,7 +16,7 @@ public class ProductA {
 
     private BigDecimal price;
 
-    private ProductA(ProductABuilder builder){
+    private ProductB(ProductABuilder builder){
         this.name=builder.name;
         this.createDate=builder.createDate;
         this.price=builder.price;
@@ -31,7 +30,7 @@ public class ProductA {
 
 
 
-    public static class ProductABuilder implements Build<ProductA> {
+    public static class ProductABuilder implements Build<ProductB> {
         private String name;
 
         private LocalDate createDate;
@@ -42,9 +41,9 @@ public class ProductA {
 
         public ProductABuilder(){
             //设置默认值
-            this.name = "ProductA";
+            this.name = "ProductB";
             this.createDate = LocalDate.now();
-            this.price = new BigDecimal(100);
+            this.price = new BigDecimal(200);
         }
         public ProductABuilder name(String name){
             this.name=name;
@@ -62,8 +61,8 @@ public class ProductA {
         }
 
         @Override
-        public ProductA build(){
-            return new ProductA(this);
+        public ProductB build(){
+            return new ProductB(this);
         }
     }
 

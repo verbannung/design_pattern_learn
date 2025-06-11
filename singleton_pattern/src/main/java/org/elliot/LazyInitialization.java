@@ -2,14 +2,14 @@ package org.elliot;
 
 import java.util.Objects;
 
-public class EagerSingleton {
+public class LazyInitialization {
 
-    public volatile static EagerSingleton INSTANCE=getInstance();
+    public volatile static Test INSTANCE=getInstance();
 
-    private static EagerSingleton getInstance(){
+    private static Test getInstance(){
         if(INSTANCE==null){
-            synchronized (EagerSingleton.class){
-                return Objects.requireNonNullElseGet(INSTANCE, EagerSingleton::new);
+            synchronized (LazyInitialization.class){
+                return Objects.requireNonNullElseGet(INSTANCE, Test::new);
             }
         }else {
             return INSTANCE;
@@ -17,8 +17,8 @@ public class EagerSingleton {
     }
     
     public static void main(String[] args) {
-        EagerSingleton singleton1 = EagerSingleton.INSTANCE;
-        EagerSingleton singleton2= EagerSingleton.INSTANCE;
+        Test singleton1 = LazyInitialization.INSTANCE;
+        Test singleton2= LazyInitialization.INSTANCE;
         System.out.println(singleton1 == singleton2);
 
     }

@@ -1,8 +1,6 @@
 package org.elliot.domain;
 
-import lombok.Builder;
 import lombok.Data;
-import org.elliot.Build;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -31,7 +29,7 @@ public class ProductA {
 
 
 
-    public static class ProductABuilder implements Build<ProductA> {
+    public static class ProductABuilder  {
         private String name;
 
         private LocalDate createDate;
@@ -61,7 +59,6 @@ public class ProductA {
             return this;
         }
 
-        @Override
         public ProductA build(){
             return new ProductA(this);
         }

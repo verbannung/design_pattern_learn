@@ -1,4 +1,7 @@
 package org.elliot;
 
-public interface Build {
+import org.elliot.domain.ProductA;
+
+public interface Build<T> {
+    T build();
 }

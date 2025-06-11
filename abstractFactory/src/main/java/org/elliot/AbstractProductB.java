@@ -1,6 +1,6 @@
 package org.elliot;
 
-public abstract class AbstractProductA {
+public abstract class AbstractProductB {
     public abstract void doSomething();
-    private String name;
+    public abstract String getName();
 }

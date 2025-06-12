@@ -1,4 +1,8 @@
 package org.elliot;
 
-public class AbstractTemplate {
+public abstract class AbstractTemplate {
+
+    void doSomething() {
+        System.out.println("doSomething");
+    }
 }

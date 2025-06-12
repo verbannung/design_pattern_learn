@@ -1,6 +1,9 @@
 package org.elliot;
 
-public interface Strategy {
+public class StrategyA implements Strategy {
 
-    void operation();
+    @Override
+    public void operation(){
+        System.out.println("Operation A");
+    }
 }

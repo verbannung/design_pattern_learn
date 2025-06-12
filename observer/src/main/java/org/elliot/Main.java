@@ -4,6 +4,9 @@ package org.elliot;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
+        Subject subject = new ConcreteSubject();
+        subject.registerObserver(new Elliot());
+        subject.registerObserver(new Mark());
+        subject.notifyObservers();
     }
 }

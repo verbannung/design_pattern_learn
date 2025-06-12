@@ -1,4 +1,6 @@
 package org.elliot;
 
-public class Element {
+public interface Element {
+
+    void accept(Visitor visitor);
 }

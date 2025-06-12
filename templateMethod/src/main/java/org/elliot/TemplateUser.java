@@ -1,4 +1,4 @@
 package org.elliot;
 
-public class TemplateUser {
+public class TemplateUser extends AbstractTemplate{
 }

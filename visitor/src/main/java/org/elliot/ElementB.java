@@ -1,8 +1,8 @@
 package org.elliot;
 
-public class ElementA implements Element {
+public class ElementB implements Element {
     @Override
     public void accept(Visitor visitor) {
-        System.out.println("ElementA doSomething");
+        System.out.println("ElementB doSomething");
     }
 }

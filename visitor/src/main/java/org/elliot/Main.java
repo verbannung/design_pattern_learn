@@ -4,14 +4,28 @@ package org.elliot;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Visitor visitor = new Visitor();
+        visitor.visit(new ElementA());
+        visitor.visit(new ElementB());
+    }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    //如果不使用访问者模式，容易写出这种
+
+    public void exchange(Element element){
+        if(element instanceof ElementA){
+            System.out.println("doSomething");
+        }else if(element instanceof ElementB){
+            System.out.println("doSomething");
+        }
+    }
+
+    //jdk21模式匹配
+    public void exchange2(Element element){
+        switch (element){
+            case ElementA a -> a.accept(new Visitor());
+            case ElementB b -> b.accept(new Visitor());
+            case null -> System.out.println("Element is null");
+            default -> throw new IllegalArgumentException("Unknown element type: " + element.getClass());
         }
     }
 }

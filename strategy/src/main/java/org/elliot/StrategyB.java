@@ -1,8 +1,9 @@
 package org.elliot;
 
-public class StrategyA {
+public class StrategyB implements Strategy{
 
-    void operation(){
-        System.out.println("Operation A");
+    @Override
+    public void operation(){
+        System.out.println("Operation B");
     }
 }
